@@ -443,7 +443,7 @@ export const outlook365Config: IConfigCredentials[] = [
   ...mailConfigBase,
 ];
 
-export const infobipSMSConfig: IConfigCredentials[] = [
+export const infobipConfig: IConfigCredentials[] = [
   {
     key: CredentialsKeyEnum.ApiKey,
     displayName: 'API Key',
@@ -459,7 +459,13 @@ export const infobipSMSConfig: IConfigCredentials[] = [
   ...smsConfigBase,
 ];
 
-export const infobipEmailConfig: IConfigCredentials[] = [
+export const smsMasivosConfig: IConfigCredentials[] = [
+  {
+    key: CredentialsKeyEnum.BaseUrl,
+    displayName: 'Base URL',
+    type: 'string',
+    required: true,
+  },
   {
     key: CredentialsKeyEnum.ApiKey,
     displayName: 'API Key',
@@ -467,10 +473,16 @@ export const infobipEmailConfig: IConfigCredentials[] = [
     required: true,
   },
   {
-    key: CredentialsKeyEnum.BaseUrl,
-    displayName: 'Base URL',
+    key: CredentialsKeyEnum.User,
+    displayName: 'Usuario',
     type: 'string',
     required: true,
   },
-  ...mailConfigBase,
+  {
+    key: CredentialsKeyEnum.Password,
+    displayName: 'Clave',
+    type: 'string',
+    required: true,
+  },
+  ...smsConfigBase,
 ];

@@ -9,9 +9,10 @@ import {
   telnyxConfig,
   twilioConfig,
   firetextConfig,
-  infobipSMSConfig,
+  infobipConfig,
   burstSmsConfig,
   clickatellConfig,
+  smsMasivosConfig,
 } from '../credentials';
 import { SmsProviderIdEnum } from '../provider.enum';
 
@@ -85,7 +86,7 @@ export const smsProviders: IProviderConfig[] = [
     id: SmsProviderIdEnum.Infobip,
     displayName: 'Infobip',
     channel: ChannelTypeEnum.SMS,
-    credentials: infobipSMSConfig,
+    credentials: infobipConfig,
     docReference: 'https://www.infobip.com/docs',
     logoFileName: { light: 'infobip.png', dark: 'infobip.png' },
   },
@@ -104,6 +105,15 @@ export const smsProviders: IProviderConfig[] = [
     credentials: clickatellConfig,
     betaVersion: true,
     docReference: 'https://docs.clickatell.com/',
+    logoFileName: { light: 'clickatell.png', dark: 'clickatell.png' },
+  },
+  {
+    id: SmsProviderIdEnum.SmsMasivos,
+    displayName: 'SMS Masivos',
+    channel: ChannelTypeEnum.SMS,
+    credentials: smsMasivosConfig,
+    betaVersion: true,
+    docReference: 'https://www.smsmasivos.com.ar/?/',
     logoFileName: { light: 'clickatell.png', dark: 'clickatell.png' },
   },
 ];

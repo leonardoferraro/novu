@@ -34,7 +34,7 @@ export enum EmailProviderIdEnum {
   Sendinblue = 'sendinblue',
   SES = 'ses',
   NetCore = 'netcore',
-  Infobip = 'infobip-email',
+  Infobip = 'infobip',
   MailerSend = 'mailersend',
   Clickatell = 'clickatell',
   Outlook365 = 'outlook365',
@@ -49,9 +49,10 @@ export enum SmsProviderIdEnum {
   Twilio = 'twilio',
   Gupshup = 'gupshup',
   Firetext = 'firetext',
-  Infobip = 'infobip-sms',
+  Infobip = 'infobip',
   BurstSms = 'burst-sms',
   Clickatell = 'clickatell',
+  SmsMasivos = 'smsMasivos',
 }
 
 export enum ChatProviderIdEnum {
