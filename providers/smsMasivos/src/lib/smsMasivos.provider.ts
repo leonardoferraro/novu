@@ -15,15 +15,13 @@ if (!globalThis.fetch) {
 }
 
 export class SmsMasivosSmsProvider implements ISmsProvider {
-  /*
-   * public static readonly BASE_URL =
-   *   'http://servicio.smsmasivos.com.ar/enviar_sms.asp';
-   */
+  public static readonly BASE_URL =
+    'http://servicio.smsmasivos.com.ar/enviar_sms.asp';
+
   channelType = ChannelTypeEnum.SMS as ChannelTypeEnum.SMS;
   id = 'smsMasivos';
 
   private sms = {
-    baseUrl: '',
     apiKey: '',
     user: '',
     password: '',
@@ -31,13 +29,11 @@ export class SmsMasivosSmsProvider implements ISmsProvider {
 
   constructor(
     private config: {
-      baseUrl: string;
       apiKey: string;
       user: string;
       password: string;
     }
   ) {
-    this.sms.baseUrl = config.baseUrl;
     this.sms.apiKey = config.apiKey;
     this.sms.user = config.user;
     this.sms.password = config.password;
@@ -53,10 +49,10 @@ export class SmsMasivosSmsProvider implements ISmsProvider {
       tos: options.to,
       texto: options.content,
     };
-    console.log(this.sms.baseUrl);
+    console.log(SmsMasivosSmsProvider.BASE_URL);
     const urlSearchParams = new URLSearchParams(params);
     console.log(urlSearchParams);
-    const url = new URL(this.sms.baseUrl);
+    const url = new URL(SmsMasivosSmsProvider.BASE_URL);
     console.log(url);
     url.search = urlSearchParams.toString();
 

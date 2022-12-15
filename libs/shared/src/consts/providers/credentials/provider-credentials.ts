@@ -461,12 +461,6 @@ export const infobipConfig: IConfigCredentials[] = [
 
 export const smsMasivosConfig: IConfigCredentials[] = [
   {
-    key: CredentialsKeyEnum.BaseUrl,
-    displayName: 'Base URL',
-    type: 'string',
-    required: true,
-  },
-  {
     key: CredentialsKeyEnum.ApiKey,
     displayName: 'API Key',
     type: 'string',
