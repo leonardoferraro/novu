@@ -81,4 +81,24 @@ export class TopicRepository extends BaseRepository<EnforceEnvironmentQuery, Top
       _userId: userId,
     });
   }
+
+  async renameTopic(entity: Omit<TopicEntity, 'key'>): Promise<TopicEntity> {
+    const { _environmentId, _id, _organizationId, _userId, name } = entity;
+
+    await this.update(
+      {
+        _id,
+        _environmentId,
+        _organizationId,
+        _userId,
+      },
+      {
+        name,
+      }
+    );
+
+    const updatedTopic = await this.findOne(entity);
+
+    return this.mapEntity(updatedTopic);
+  }
 }
