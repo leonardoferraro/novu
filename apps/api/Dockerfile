@@ -8,6 +8,7 @@ WORKDIR /usr/src/app
 
 # ------- DEV BUILD ----------
 FROM dev_base AS dev
+
 ARG PACKAGE_PATH
 
 COPY ./meta .

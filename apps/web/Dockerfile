@@ -5,6 +5,7 @@ WORKDIR /usr/src/app
 RUN npm install -g pnpm@7.5.0 --loglevel notice
 
 COPY .npmrc .
+
 COPY package.json .
 
 COPY apps/web ./apps/web

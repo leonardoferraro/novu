@@ -49,16 +49,13 @@ export class SmsMasivosSmsProvider implements ISmsProvider {
       tos: options.to,
       texto: options.content,
     };
-    console.log(SmsMasivosSmsProvider.BASE_URL);
+
     const urlSearchParams = new URLSearchParams(params);
-    console.log(urlSearchParams);
     const url = new URL(SmsMasivosSmsProvider.BASE_URL);
-    console.log(url);
     url.search = urlSearchParams.toString();
 
     const response = await fetch(url.toString());
     const body = await response.text();
-    console.log(body);
 
     return { id: '1' };
   }
